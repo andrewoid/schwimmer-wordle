@@ -18,7 +18,7 @@ public class JettyMain {
         connector.setPort(8080);
         server.setConnectors(new Connector[]{connector});
 
-        // Adds the Servet to the Server
+        // Adds the WordleDictionaryServlet to the Server
         ServletHandler handler = new ServletHandler();
         handler.addServletWithMapping(WordleDictionaryServlet.class, "/definition");
         server.setHandler(handler);
