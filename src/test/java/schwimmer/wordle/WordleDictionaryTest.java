@@ -15,7 +15,7 @@ class WordleDictionaryTest {
         // when
 
         // then
-        assertTrue(dictionary.isWord("lookup"));
+        assertTrue(dictionary.isWord("party"));
     }
 
     @Test
@@ -27,7 +27,7 @@ class WordleDictionaryTest {
 
         // then
         assertEquals(
-                "the process of looking something up [n -S]",
-                dictionary.getDefinition("lookup"));
+                "to attend a social gathering [v -TIED, -TYING, -TIES]",
+                dictionary.getDefinition("party"));
     }
 }
