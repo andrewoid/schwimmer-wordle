@@ -1,4 +1,7 @@
+package schwimmer.wordle;
+
 import org.junit.jupiter.api.Test;
+import schwimmer.wordle.WordleDictionary;
 
 import static org.junit.jupiter.api.Assertions.*;
 
