@@ -14,10 +14,6 @@ import java.io.IOException;
  */
 public class WordleDictionaryServlet extends HttpServlet {
 
-<<<<<<< Updated upstream
-    private WordleDictionary dictionary = new WordleDictionary();
-    private Gson gson = new Gson();
-=======
     private WordleDictionary dictionary;
     private Gson gson;
 
@@ -35,7 +31,6 @@ public class WordleDictionaryServlet extends HttpServlet {
         this.dictionary = dictionary;
         this.gson = gson;
     }
->>>>>>> Stashed changes
 
     @Override
     protected void doGet(

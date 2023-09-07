@@ -34,6 +34,8 @@ public class WordleDictionaryServletTest {
 
         // then
         verify(response).setContentType("text/json");
-        verify(out).println(anyString());
+        // verify that the output json is correct
+        DictionaryResponse expected = new DictionaryResponse("party", "Parties are fun");
+        verify(out).println(gson.toJson(expected));
     }
 }
