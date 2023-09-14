@@ -16,9 +16,16 @@ public class WordleDictionaryServlet extends HttpServlet {
     private WordleDictionary dictionary;
     private Gson gson;
 
+    // used in tests
     public WordleDictionaryServlet(WordleDictionary dictionary, Gson gson) {
         this.dictionary = dictionary;
         this.gson = gson;
+    }
+
+    // used in Tomcat
+    public WordleDictionaryServlet() throws IOException {
+        this.dictionary = new WordleDictionary();
+        this.gson = new Gson();
     }
 
     @Override
