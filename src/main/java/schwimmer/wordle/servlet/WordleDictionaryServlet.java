@@ -14,8 +14,23 @@ import java.io.IOException;
  */
 public class WordleDictionaryServlet extends HttpServlet {
 
-    private WordleDictionary dictionary = new WordleDictionary();
-    private Gson gson = new Gson();
+    private WordleDictionary dictionary;
+    private Gson gson;
+
+    /**
+     * This is used by Jetty
+     */
+    public WordleDictionaryServlet() {
+        this(new WordleDictionary(), new Gson());
+    }
+
+    /**
+     * This is used in tests
+     */
+    public WordleDictionaryServlet(WordleDictionary dictionary, Gson gson) {
+        this.dictionary = dictionary;
+        this.gson = gson;
+    }
 
     @Override
     protected void doGet(
