@@ -4,6 +4,7 @@ import org.eclipse.jetty.server.Connector;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
 import org.eclipse.jetty.servlet.ServletHandler;
+import org.eclipse.jetty.servlet.ServletHolder;
 
 /**
  * Runs the WordleDictionary servlet locally.
@@ -19,8 +20,10 @@ public class JettyMain {
         server.setConnectors(new Connector[]{connector});
 
         // Adds the WordleDictionaryServlet to the Server
+        WordleDictionaryServlet servlet = new WordleDictionaryServlet();
+        ServletHolder holder = new ServletHolder(servlet);
         ServletHandler handler = new ServletHandler();
-        handler.addServletWithMapping(WordleDictionaryServlet.class, "/definition");
+        handler.addServletWithMapping(holder, "/definition");
         server.setHandler(handler);
 
         // Starts the server until this program exists.
