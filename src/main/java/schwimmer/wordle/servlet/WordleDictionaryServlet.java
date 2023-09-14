@@ -1,7 +1,6 @@
 package schwimmer.wordle.servlet;
 
 import com.google.gson.Gson;
-import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -14,10 +13,12 @@ import java.io.IOException;
  */
 public class WordleDictionaryServlet extends HttpServlet {
 
-    private WordleDictionary dictionary = new WordleDictionary();
-    private Gson gson = new Gson();
+    private WordleDictionary dictionary;
+    private Gson gson;
 
-    public WordleDictionaryServlet() throws IOException {
+    public WordleDictionaryServlet(WordleDictionary dictionary, Gson gson) {
+        this.dictionary = dictionary;
+        this.gson = gson;
     }
 
     @Override
