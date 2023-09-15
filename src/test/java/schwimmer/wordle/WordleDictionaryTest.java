@@ -3,12 +3,14 @@ package schwimmer.wordle;
 import org.junit.jupiter.api.Test;
 import schwimmer.wordle.WordleDictionary;
 
+import java.io.IOException;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class WordleDictionaryTest {
 
     @Test
-    void isWord() {
+    void isWord() throws IOException {
         // given
         WordleDictionary dictionary = new WordleDictionary();
 
@@ -19,7 +21,7 @@ class WordleDictionaryTest {
     }
 
     @Test
-    void getDefinition() {
+    void getDefinition() throws IOException {
         // given
         WordleDictionary dictionary = new WordleDictionary();
 
